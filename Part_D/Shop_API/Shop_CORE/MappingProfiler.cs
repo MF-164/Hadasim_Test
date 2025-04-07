@@ -6,8 +6,8 @@ public class MappingProfile : Profile
 {
     public MappingProfile()
     {
-        CreateMap<Provider, ProviderVM>();
-        CreateMap<ProviderVM, Provider>();
+        CreateMap<Provider, ProviderVm>();
+        CreateMap<ProviderVm, Provider>();
 
         CreateMap<Product, ProductVm>()
             .ForMember(dest => dest.ProviderName, opt => opt.MapFrom(src => src.Provider.CompanyName));

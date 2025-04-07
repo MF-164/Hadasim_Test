@@ -12,6 +12,7 @@ namespace Shop_CORE.VMs
         public string CompanyName { get; set; }
         public string Phone { get; set; }
         public string RepresentativeName { get; set; }
+        public string Password { get; set; }
 
     }
 }
