@@ -1,4 +1,6 @@
-﻿using Shop_CORE.IServices;
+﻿using AutoMapper;
+using Shop_CORE.IServices;
+using Shop_CORE.VMs;
 using Shop_DATA.IRepositories;
 using Shop_DATA.Models;
 using System;
@@ -10,21 +12,24 @@ namespace Shop_CORE.Services
     public class ProviderService : IProviderService
     {
         private readonly IProviderRepository _providerRepository;
+        private readonly IMapper _mapper;
 
-        public ProviderService(IProviderRepository providerRepository)
+        public ProviderService(IProviderRepository providerRepository, IMapper mapper)
         {
             _providerRepository = providerRepository;
+            _mapper = mapper;
         }
 
-        public async Task CreateProviderAsync(Provider provider)
+        public async Task CreateProviderAsync(ProviderVm providerVm)
         {
             try
             {
-                if (provider == null)
+                if (providerVm == null)
                 {
-                    throw new ArgumentNullException(nameof(provider), "Provider cannot be null.");
+                    throw new ArgumentNullException(nameof(providerVm), "Provider cannot be null.");
                 }
-                ValidateProvider(provider);
+                var provider = _mapper.Map<Provider>(providerVm);
+                await ValidateProvider(provider);
                 await _providerRepository.CreateAsync(provider);
             }
             catch (Exception ex)
@@ -33,7 +38,7 @@ namespace Shop_CORE.Services
             }
         }
 
-        public async Task<Provider> GetProviderByIdAsync(int id)
+        public async Task<ProviderVm> GetProviderByIdAsync(int id)
         {
             try
             {
@@ -48,7 +53,7 @@ namespace Shop_CORE.Services
                     throw new Exception($"Provider with ID {id} not found.");
                 }
 
-                return provider;
+                return _mapper.Map<ProviderVm>(provider);
             }
             catch (Exception ex)
             {
@@ -56,11 +61,12 @@ namespace Shop_CORE.Services
             }
         }
 
-        public async Task<List<Provider>> GetAllProvidersAsync()
+        public async Task<List<ProviderVm>> GetAllProvidersAsync()
         {
             try
             {
-                return await _providerRepository.GetAllAsync();
+                var providers = await _providerRepository.GetAllAsync();
+                return _mapper.Map<List<ProviderVm>>(providers);
             }
             catch (Exception ex)
             {
@@ -68,7 +74,7 @@ namespace Shop_CORE.Services
             }
         }
 
-        public async Task ValidateProvider(Provider provider)
+        private async Task ValidateProvider(Provider provider)
         {
             if (provider == null)
             {

@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using Shop_CORE.IServices;
+using Shop_CORE.VMs;
 using Shop_DATA.IRepositories;
 using Shop_DATA.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Shop_CORE.Services
@@ -12,21 +12,22 @@ namespace Shop_CORE.Services
     public class OrderService : IOrderService
     {
         private readonly IOrderRepository _orderRepository;
-        private readonly IProductRepository _productRepository; // Assuming you have a product repository to get product details
+        private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
 
-        public OrderService(IOrderRepository orderRepository, IProductRepository productRepository,IMapper mapper)
+        public OrderService(IOrderRepository orderRepository, IProductRepository productRepository, IMapper mapper)
         {
             _orderRepository = orderRepository;
             _productRepository = productRepository;
             _mapper = mapper;
         }
 
-        public async Task CreateOrderAsync(Order order)
+        public async Task CreateOrderAsync(OrderVm orderVm)
         {
             try
             {
-                ValidateOrder(order);
+                var order = _mapper.Map<Order>(orderVm);
+                await ValidateOrder(order);
                 await _orderRepository.CreateAsync(order);
             }
             catch (Exception ex)
@@ -35,11 +36,12 @@ namespace Shop_CORE.Services
             }
         }
 
-        public async Task<List<Order>> GetAllOrdersAsync()
+        public async Task<List<OrderVm>> GetAllOrdersAsync()
         {
             try
             {
-                return await _orderRepository.GetAllAsync();
+                var orders = await _orderRepository.GetAllAsync();
+                return _mapper.Map<List<OrderVm>>(orders);
             }
             catch (Exception ex)
             {
@@ -47,7 +49,7 @@ namespace Shop_CORE.Services
             }
         }
 
-        public async Task<Order> GetOrderByIdAsync(int id)
+        public async Task<OrderVm> GetOrderByIdAsync(int id)
         {
             try
             {
@@ -56,7 +58,8 @@ namespace Shop_CORE.Services
                     throw new ArgumentException("Invalid order ID");
                 }
 
-                return await _orderRepository.GetByIdAsync(id);
+                var order = await _orderRepository.GetByIdAsync(id);
+                return _mapper.Map<OrderVm>(order);
             }
             catch (Exception ex)
             {
@@ -73,35 +76,34 @@ namespace Shop_CORE.Services
 
             if (order.Quantity <= 0)
             {
-                throw new ArgumentException("TotalAmount חייב להיות גדול מ-0.", nameof(order.Quantity));
+                throw new ArgumentException("TotalAmount must be greater than 0.", nameof(order.Quantity));
             }
 
             if (order.ProductId <= 0)
             {
-                throw new ArgumentException("ProductId חייב להיות תקין.", nameof(order.ProductId));
+                throw new ArgumentException("ProductId must be valid.", nameof(order.ProductId));
             }
 
             if (order.ProviderId <= 0)
             {
-                throw new ArgumentException("ProviderId חייב להיות תקין.", nameof(order.ProviderId));
+                throw new ArgumentException("ProviderId must be valid.", nameof(order.ProviderId));
             }
 
             var product = await _productRepository.GetByIdAsync(order.ProductId);
             if (product == null)
             {
-                throw new ArgumentException("המוצר עם ה-ID שניתן לא קיים.", nameof(order.ProductId));
+                throw new ArgumentException("The product with the given ID does not exist.", nameof(order.ProductId));
             }
 
             if (product.ProviderId != order.ProviderId)
             {
-                throw new ArgumentException("ProviderId אינו תואם לספק של המוצר.", nameof(order.ProviderId));
+                throw new ArgumentException("ProviderId does not match the product's supplier.", nameof(order.ProviderId));
             }
 
             if (order.Quantity < product.MinQuantity)
             {
-                throw new ArgumentException($"הכמות המוזמנת חייבת להיות לפחות {product.MinQuantity}.", nameof(order.Quantity));
+                throw new ArgumentException($"The ordered quantity must be at least {product.MinQuantity}.", nameof(order.Quantity));
             }
         }
-
     }
 }

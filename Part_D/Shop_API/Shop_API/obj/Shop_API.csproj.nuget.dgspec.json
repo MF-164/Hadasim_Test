@@ -35,9 +35,6 @@
             "projectReferences": {
               "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_CORE\\Shop_CORE.csproj": {
                 "projectPath": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_CORE\\Shop_CORE.csproj"
-              },
-              "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\Shop_DATA.csproj": {
-                "projectPath": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\Shop_DATA.csproj"
               }
             }
           }

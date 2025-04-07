@@ -1,4 +1,5 @@
-﻿using Shop_DATA.Models;
+﻿using Shop_CORE.VMs;
+using Shop_DATA.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,8 @@ namespace Shop_CORE.IServices
 {
     public interface IProviderService
     {
-        Task CreateProviderAsync(Provider provider);
-        Task<Provider> GetProviderByIdAsync(int id);
-        Task<List<Provider>> GetAllProvidersAsync();
+        Task CreateProviderAsync(ProviderVm provider);
+        Task<ProviderVm> GetProviderByIdAsync(int id);
+        Task<List<ProviderVm>> GetAllProvidersAsync();
     }
 }

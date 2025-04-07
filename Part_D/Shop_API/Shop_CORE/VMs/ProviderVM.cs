@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shop_CORE.VMs
 {
-    public class ProviderVM
+    public class ProviderVm
     {
         public int Id { get; set; }
         public string CompanyName { get; set; }

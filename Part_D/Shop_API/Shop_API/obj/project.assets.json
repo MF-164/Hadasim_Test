@@ -4980,7 +4980,6 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.0",
       "Shop_CORE >= 1.0.0",
-      "Shop_DATA >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.6.2"
     ]
   },
@@ -5019,9 +5018,6 @@
           "projectReferences": {
             "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_CORE\\Shop_CORE.csproj": {
               "projectPath": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_CORE\\Shop_CORE.csproj"
-            },
-            "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\Shop_DATA.csproj": {
-              "projectPath": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\Shop_DATA.csproj"
             }
           }
         }

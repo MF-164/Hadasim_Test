@@ -1,4 +1,7 @@
-﻿using Shop_DATA.IRepositories;
+﻿using AutoMapper;
+using Shop_CORE.IServices;
+using Shop_CORE.VMs;
+using Shop_DATA.IRepositories;
 using Shop_DATA.Models;
 using System;
 using System.Collections.Generic;
@@ -9,15 +12,17 @@ namespace Shop_CORE.Services
     public class ProductService : IProductService
     {
         private readonly IProductRepository _productRepository;
-        private readonly IProviderRepository _providerRepository; 
+        private readonly IProviderRepository _providerRepository;
+        private readonly IMapper _mapper;
 
-        public ProductService(IProductRepository productRepository, IProviderRepository providerRepository)
+        public ProductService(IProductRepository productRepository, IProviderRepository providerRepository, IMapper mapper)
         {
             _productRepository = productRepository;
-            _providerRepository = providerRepository; 
+            _providerRepository = providerRepository;
+            _mapper = mapper;
         }
 
-        public async Task<Product> GetProductByIdAsync(int id)
+        public async Task<ProductVm> GetProductByIdAsync(int id)
         {
             try
             {
@@ -25,7 +30,8 @@ namespace Shop_CORE.Services
                 {
                     throw new ArgumentException("Invalid product ID");
                 }
-                return await _productRepository.GetByIdAsync(id);
+                var product = await _productRepository.GetByIdAsync(id);
+                return _mapper.Map<ProductVm>(product);
             }
             catch (Exception ex)
             {
@@ -33,15 +39,17 @@ namespace Shop_CORE.Services
             }
         }
 
-        public async Task<List<Product>> GetProductsByProviderAsync(int providerId)
+        public async Task<List<ProductVm>> GetProductsByProviderAsync(int providerId)
         {
             try
             {
-                if (providerId <= 0) {
+                if (providerId <= 0)
+                {
                     throw new ArgumentException("Invalid provider ID");
                 }
 
-                return await _productRepository.GetByProviderAsync(providerId);
+                var products = await _productRepository.GetByProviderAsync(providerId);
+                return _mapper.Map<List<ProductVm>>(products);
             }
             catch (Exception ex)
             {
@@ -49,11 +57,12 @@ namespace Shop_CORE.Services
             }
         }
 
-        public async Task CreateProductAsync(Product product)
+        public async Task CreateProductAsync(ProductVm productVm)
         {
             try
             {
-                ValidateProduct(product);
+                var product = _mapper.Map<Product>(productVm);
+                await ValidateProduct(product);
                 await _productRepository.CreateAsync(product);
             }
             catch (Exception ex)
@@ -62,7 +71,7 @@ namespace Shop_CORE.Services
             }
         }
 
-        public async Task ValidateProduct(Product product)
+        private async Task ValidateProduct(Product product)
         {
             if (product == null)
             {
@@ -79,7 +88,7 @@ namespace Shop_CORE.Services
                 throw new ArgumentException("Price must be greater than 0.");
             }
 
-            //Check if Provider exist
+            // Check if Provider exists
             var providerExists = await _providerRepository.GetByIdAsync(product.ProviderId) != null;
             if (!providerExists)
             {
