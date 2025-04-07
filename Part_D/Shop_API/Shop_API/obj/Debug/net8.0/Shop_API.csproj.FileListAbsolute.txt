@@ -142,3 +142,5 @@ D:\Hadasim_Test\Part_D\Shop_API\Shop_API\bin\Debug\net8.0\Shop_CORE.dll
 D:\Hadasim_Test\Part_D\Shop_API\Shop_API\bin\Debug\net8.0\Shop_DATA.dll
 D:\Hadasim_Test\Part_D\Shop_API\Shop_API\bin\Debug\net8.0\Shop_CORE.pdb
 D:\Hadasim_Test\Part_D\Shop_API\Shop_API\bin\Debug\net8.0\Shop_DATA.pdb
+D:\Hadasim_Test\Part_D\Shop_API\Shop_API\bin\Debug\net8.0\AutoMapper.dll
+D:\Hadasim_Test\Part_D\Shop_API\Shop_API\obj\Debug\net8.0\Shop_API.MvcApplicationPartsAssemblyInfo.cs

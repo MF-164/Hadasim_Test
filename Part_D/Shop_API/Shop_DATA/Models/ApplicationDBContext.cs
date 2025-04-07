@@ -1,20 +1,41 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Shop_DATA.Models;
 
-namespace Shop_DATA.Models
+public class ApplicationDbContext : DbContext
 {
-    public class ApplicationDbContext : DbContext
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        : base(options)
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
-        {}
+    }
 
-        public DbSet<Product> Products { get; set; }
-        public DbSet<Provider> Providers { get; set; }
-        public DbSet<Order> Orders { get; set; }
+    public DbSet<Order> Orders { get; set; }
+    public DbSet<Product> Products { get; set; }
+    public DbSet<Provider> Providers { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        // הגדרות עבור Foreign Keys
+        modelBuilder.Entity<Order>()
+            .HasOne(o => o.Product)
+            .WithMany()
+            .HasForeignKey(o => o.ProductId)
+            .OnDelete(DeleteBehavior.Restrict); // או NoAction
+
+        modelBuilder.Entity<Order>()
+            .HasOne(o => o.Provider)
+            .WithMany()
+            .HasForeignKey(o => o.ProviderId)
+            .OnDelete(DeleteBehavior.Restrict); // או NoAction
+
+        // הגדרות עבור סוגי עמודות
+        modelBuilder.Entity<Order>()
+            .Property(o => o.Quantity)
+            .HasColumnType("decimal(18,2)");
+
+        modelBuilder.Entity<Product>()
+            .Property(p => p.Price)
+            .HasColumnType("decimal(18,2)");
+
+        base.OnModelCreating(modelBuilder);
     }
 }
-// Compare this snippet from Shop_DATA/Models/ApplicationDBContext.cs:

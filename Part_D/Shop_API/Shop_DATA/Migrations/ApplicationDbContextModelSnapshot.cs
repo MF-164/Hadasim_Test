@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Shop_DATA.Models;
 
 #nullable disable
 
@@ -33,15 +32,25 @@ namespace Shop_DATA.Migrations
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
                     b.Property<int>("ProviderId")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("TotalAmount")
+                    b.Property<int?>("ProviderId1")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Quantity")
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ProductId");
+
                     b.HasIndex("ProviderId");
+
+                    b.HasIndex("ProviderId1");
 
                     b.ToTable("Orders");
                 });
@@ -57,6 +66,9 @@ namespace Shop_DATA.Migrations
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("MinQuantity")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -65,9 +77,6 @@ namespace Shop_DATA.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("ProviderId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantity")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -104,11 +113,23 @@ namespace Shop_DATA.Migrations
 
             modelBuilder.Entity("Shop_DATA.Models.Order", b =>
                 {
-                    b.HasOne("Shop_DATA.Models.Provider", "Provider")
-                        .WithMany("Orders")
-                        .HasForeignKey("ProviderId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                    b.HasOne("Shop_DATA.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.HasOne("Shop_DATA.Models.Provider", "Provider")
+                        .WithMany()
+                        .HasForeignKey("ProviderId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Shop_DATA.Models.Provider", null)
+                        .WithMany("Orders")
+                        .HasForeignKey("ProviderId1");
+
+                    b.Navigation("Product");
 
                     b.Navigation("Provider");
                 });
