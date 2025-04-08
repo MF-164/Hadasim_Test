@@ -15,6 +15,26 @@
       "RelativeMoniker": "D:0:0:{0FEF3767-3781-44F5-A99D-7C05D1F31F60}|Shop_API\\Shop_API.csproj|solutionrelative:shop_api\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{0D1D71A9-6EA7-4F6B-AB37-263F6CF9CC17}|Shop_CORE\\Shop_CORE.csproj|d:\\hadasim_test\\part_d\\shop_api\\shop_core\\iservices\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D1D71A9-6EA7-4F6B-AB37-263F6CF9CC17}|Shop_CORE\\Shop_CORE.csproj|solutionrelative:shop_core\\iservices\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D1D71A9-6EA7-4F6B-AB37-263F6CF9CC17}|Shop_CORE\\Shop_CORE.csproj|d:\\hadasim_test\\part_d\\shop_api\\shop_core\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D1D71A9-6EA7-4F6B-AB37-263F6CF9CC17}|Shop_CORE\\Shop_CORE.csproj|solutionrelative:shop_core\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3AF32DE2-D874-4F88-BCB7-44D705D1EF13}|Shop_DATA\\Shop_DATA.csproj|d:\\hadasim_test\\part_d\\shop_api\\shop_data\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3AF32DE2-D874-4F88-BCB7-44D705D1EF13}|Shop_DATA\\Shop_DATA.csproj|solutionrelative:shop_data\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3AF32DE2-D874-4F88-BCB7-44D705D1EF13}|Shop_DATA\\Shop_DATA.csproj|d:\\hadasim_test\\part_d\\shop_api\\shop_data\\irepositories\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3AF32DE2-D874-4F88-BCB7-44D705D1EF13}|Shop_DATA\\Shop_DATA.csproj|solutionrelative:shop_data\\irepositories\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D1D71A9-6EA7-4F6B-AB37-263F6CF9CC17}|Shop_CORE\\Shop_CORE.csproj|d:\\hadasim_test\\part_d\\shop_api\\shop_core\\vms\\productvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D1D71A9-6EA7-4F6B-AB37-263F6CF9CC17}|Shop_CORE\\Shop_CORE.csproj|solutionrelative:shop_core\\vms\\productvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0D1D71A9-6EA7-4F6B-AB37-263F6CF9CC17}|Shop_CORE\\Shop_CORE.csproj|d:\\hadasim_test\\part_d\\shop_api\\shop_core\\vms\\ordervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D1D71A9-6EA7-4F6B-AB37-263F6CF9CC17}|Shop_CORE\\Shop_CORE.csproj|solutionrelative:shop_core\\vms\\ordervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -55,68 +75,40 @@
       "RelativeMoniker": "D:0:0:{0D1D71A9-6EA7-4F6B-AB37-263F6CF9CC17}|Shop_CORE\\Shop_CORE.csproj|solutionrelative:shop_core\\vms\\providervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\Migrations\\20250408114445_db3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Shop_DATA\\Migrations\\20250408114445_db3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3AF32DE2-D874-4F88-BCB7-44D705D1EF13}|Shop_DATA\\Shop_DATA.csproj|d:\\hadasim_test\\part_d\\shop_api\\shop_data\\models\\provider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3AF32DE2-D874-4F88-BCB7-44D705D1EF13}|Shop_DATA\\Shop_DATA.csproj|solutionrelative:shop_data\\models\\provider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\Migrations\\20250408104941_db2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Shop_DATA\\Migrations\\20250408104941_db2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3AF32DE2-D874-4F88-BCB7-44D705D1EF13}|Shop_DATA\\Shop_DATA.csproj|d:\\hadasim_test\\part_d\\shop_api\\shop_data\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3AF32DE2-D874-4F88-BCB7-44D705D1EF13}|Shop_DATA\\Shop_DATA.csproj|solutionrelative:shop_data\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\Migrations\\20250408104403_db1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Shop_DATA\\Migrations\\20250408104403_db1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3AF32DE2-D874-4F88-BCB7-44D705D1EF13}|Shop_DATA\\Shop_DATA.csproj|d:\\hadasim_test\\part_d\\shop_api\\shop_data\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3AF32DE2-D874-4F88-BCB7-44D705D1EF13}|Shop_DATA\\Shop_DATA.csproj|solutionrelative:shop_data\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0FEF3767-3781-44F5-A99D-7C05D1F31F60}|Shop_API\\Shop_API.csproj|d:\\hadasim_test\\part_d\\shop_api\\shop_api\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0FEF3767-3781-44F5-A99D-7C05D1F31F60}|Shop_API\\Shop_API.csproj|solutionrelative:shop_api\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D1D71A9-6EA7-4F6B-AB37-263F6CF9CC17}|Shop_CORE\\Shop_CORE.csproj|d:\\hadasim_test\\part_d\\shop_api\\shop_core\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D1D71A9-6EA7-4F6B-AB37-263F6CF9CC17}|Shop_CORE\\Shop_CORE.csproj|solutionrelative:shop_core\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3AF32DE2-D874-4F88-BCB7-44D705D1EF13}|Shop_DATA\\Shop_DATA.csproj|d:\\hadasim_test\\part_d\\shop_api\\shop_data\\irepositories\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3AF32DE2-D874-4F88-BCB7-44D705D1EF13}|Shop_DATA\\Shop_DATA.csproj|solutionrelative:shop_data\\irepositories\\iproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3AF32DE2-D874-4F88-BCB7-44D705D1EF13}|Shop_DATA\\Shop_DATA.csproj|d:\\hadasim_test\\part_d\\shop_api\\shop_data\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3AF32DE2-D874-4F88-BCB7-44D705D1EF13}|Shop_DATA\\Shop_DATA.csproj|solutionrelative:shop_data\\repositories\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D1D71A9-6EA7-4F6B-AB37-263F6CF9CC17}|Shop_CORE\\Shop_CORE.csproj|d:\\hadasim_test\\part_d\\shop_api\\shop_core\\iservices\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D1D71A9-6EA7-4F6B-AB37-263F6CF9CC17}|Shop_CORE\\Shop_CORE.csproj|solutionrelative:shop_core\\iservices\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D1D71A9-6EA7-4F6B-AB37-263F6CF9CC17}|Shop_CORE\\Shop_CORE.csproj|d:\\hadasim_test\\part_d\\shop_api\\shop_core\\shop_core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{0D1D71A9-6EA7-4F6B-AB37-263F6CF9CC17}|Shop_CORE\\Shop_CORE.csproj|solutionrelative:shop_core\\shop_core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D1D71A9-6EA7-4F6B-AB37-263F6CF9CC17}|Shop_CORE\\Shop_CORE.csproj|d:\\hadasim_test\\part_d\\shop_api\\shop_core\\vms\\productvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D1D71A9-6EA7-4F6B-AB37-263F6CF9CC17}|Shop_CORE\\Shop_CORE.csproj|solutionrelative:shop_core\\vms\\productvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0D1D71A9-6EA7-4F6B-AB37-263F6CF9CC17}|Shop_CORE\\Shop_CORE.csproj|d:\\hadasim_test\\part_d\\shop_api\\shop_core\\mappingprofiler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D1D71A9-6EA7-4F6B-AB37-263F6CF9CC17}|Shop_CORE\\Shop_CORE.csproj|solutionrelative:shop_core\\mappingprofiler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0FEF3767-3781-44F5-A99D-7C05D1F31F60}|Shop_API\\Shop_API.csproj|d:\\hadasim_test\\part_d\\shop_api\\shop_api\\shop_api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{0FEF3767-3781-44F5-A99D-7C05D1F31F60}|Shop_API\\Shop_API.csproj|solutionrelative:shop_api\\shop_api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3AF32DE2-D874-4F88-BCB7-44D705D1EF13}|Shop_DATA\\Shop_DATA.csproj|d:\\hadasim_test\\part_d\\shop_api\\shop_data\\migrations\\20250407195718_db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3AF32DE2-D874-4F88-BCB7-44D705D1EF13}|Shop_DATA\\Shop_DATA.csproj|solutionrelative:shop_data\\migrations\\20250407195718_db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3AF32DE2-D874-4F88-BCB7-44D705D1EF13}|Shop_DATA\\Shop_DATA.csproj|d:\\hadasim_test\\part_d\\shop_api\\shop_data\\migrations\\20250408114445_db3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3AF32DE2-D874-4F88-BCB7-44D705D1EF13}|Shop_DATA\\Shop_DATA.csproj|solutionrelative:shop_data\\migrations\\20250408114445_db3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3AF32DE2-D874-4F88-BCB7-44D705D1EF13}|Shop_DATA\\Shop_DATA.csproj|d:\\hadasim_test\\part_d\\shop_api\\shop_data\\migrations\\20250408104941_db2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3AF32DE2-D874-4F88-BCB7-44D705D1EF13}|Shop_DATA\\Shop_DATA.csproj|solutionrelative:shop_data\\migrations\\20250408104941_db2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3AF32DE2-D874-4F88-BCB7-44D705D1EF13}|Shop_DATA\\Shop_DATA.csproj|d:\\hadasim_test\\part_d\\shop_api\\shop_data\\migrations\\20250408104403_db1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3AF32DE2-D874-4F88-BCB7-44D705D1EF13}|Shop_DATA\\Shop_DATA.csproj|solutionrelative:shop_data\\migrations\\20250408104403_db1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -126,7 +118,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -134,7 +126,111 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_API\\Program.cs",
+              "RelativeDocumentMoniker": "Shop_API\\Program.cs",
+              "ToolTip": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_API\\Program.cs",
+              "RelativeToolTip": "Shop_API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T19:24:27.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProviderController.cs",
+              "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_API\\Controllers\\ProviderController.cs",
+              "RelativeDocumentMoniker": "Shop_API\\Controllers\\ProviderController.cs",
+              "ToolTip": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_API\\Controllers\\ProviderController.cs",
+              "RelativeToolTip": "Shop_API\\Controllers\\ProviderController.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T19:23:52.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_API\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "Shop_API\\Controllers\\OrderController.cs",
+              "ToolTip": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_API\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "Shop_API\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T19:23:30.719Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProductVm.cs",
+              "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_CORE\\VMs\\ProductVm.cs",
+              "RelativeDocumentMoniker": "Shop_CORE\\VMs\\ProductVm.cs",
+              "ToolTip": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_CORE\\VMs\\ProductVm.cs",
+              "RelativeToolTip": "Shop_CORE\\VMs\\ProductVm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-07T20:02:33.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "IProductRepository.cs",
+              "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\IRepositories\\IProductRepository.cs",
+              "RelativeDocumentMoniker": "Shop_DATA\\IRepositories\\IProductRepository.cs",
+              "ToolTip": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\IRepositories\\IProductRepository.cs",
+              "RelativeToolTip": "Shop_DATA\\IRepositories\\IProductRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T09:48:34.038Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\Repositories\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "Shop_DATA\\Repositories\\ProductRepository.cs",
+              "ToolTip": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\Repositories\\ProductRepository.cs",
+              "RelativeToolTip": "Shop_DATA\\Repositories\\ProductRepository.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAA1wD0AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T09:47:50.007Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IProductService.cs",
+              "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_CORE\\IServices\\IProductService.cs",
+              "RelativeDocumentMoniker": "Shop_CORE\\IServices\\IProductService.cs",
+              "ToolTip": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_CORE\\IServices\\IProductService.cs",
+              "RelativeToolTip": "Shop_CORE\\IServices\\IProductService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T09:36:54.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_CORE\\Services\\ProductService.cs",
+              "RelativeDocumentMoniker": "Shop_CORE\\Services\\ProductService.cs",
+              "ToolTip": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_CORE\\Services\\ProductService.cs",
+              "RelativeToolTip": "Shop_CORE\\Services\\ProductService.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAuwAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T09:47:05.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "OrderService.cs",
               "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_CORE\\Services\\OrderService.cs",
               "RelativeDocumentMoniker": "Shop_CORE\\Services\\OrderService.cs",
@@ -147,59 +243,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IOrderRepository.cs",
-              "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\IRepositories\\IOrderRepository.cs",
-              "RelativeDocumentMoniker": "Shop_DATA\\IRepositories\\IOrderRepository.cs",
-              "ToolTip": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\IRepositories\\IOrderRepository.cs",
-              "RelativeToolTip": "Shop_DATA\\IRepositories\\IOrderRepository.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAcwAoAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T09:54:41.273Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "OrderRepository.cs",
-              "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\Repositories\\OrderRepository.cs",
-              "RelativeDocumentMoniker": "Shop_DATA\\Repositories\\OrderRepository.cs",
-              "ToolTip": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\Repositories\\OrderRepository.cs",
-              "RelativeToolTip": "Shop_DATA\\Repositories\\OrderRepository.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAIA4wDIAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T09:55:05.266Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "OrderVm.cs",
-              "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_CORE\\VMs\\OrderVm.cs",
-              "RelativeDocumentMoniker": "Shop_CORE\\VMs\\OrderVm.cs",
-              "ToolTip": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_CORE\\VMs\\OrderVm.cs",
-              "RelativeToolTip": "Shop_CORE\\VMs\\OrderVm.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAA5wBEAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T10:56:40.097Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProviderController.cs",
-              "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_API\\Controllers\\ProviderController.cs",
-              "RelativeDocumentMoniker": "Shop_API\\Controllers\\ProviderController.cs",
-              "ToolTip": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_API\\Controllers\\ProviderController.cs",
-              "RelativeToolTip": "Shop_API\\Controllers\\ProviderController.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAAAEEAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T09:35:21.033Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "IOrderService.cs",
               "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_CORE\\IServices\\IOrderService.cs",
               "RelativeDocumentMoniker": "Shop_CORE\\IServices\\IOrderService.cs",
@@ -212,33 +256,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_API\\Program.cs",
-              "RelativeDocumentMoniker": "Shop_API\\Program.cs",
-              "ToolTip": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_API\\Program.cs*",
-              "RelativeToolTip": "Shop_API\\Program.cs*",
-              "ViewState": "AgIAAAMAAAAAAAAAAAA3wAwAAAAuAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "OrderVm.cs",
+              "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_CORE\\VMs\\OrderVm.cs",
+              "RelativeDocumentMoniker": "Shop_CORE\\VMs\\OrderVm.cs",
+              "ToolTip": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_CORE\\VMs\\OrderVm.cs",
+              "RelativeToolTip": "Shop_CORE\\VMs\\OrderVm.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA5wBEAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T19:03:35.5Z",
+              "WhenOpened": "2025-04-08T10:56:40.097Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OrderController.cs",
-              "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_API\\Controllers\\OrderController.cs",
-              "RelativeDocumentMoniker": "Shop_API\\Controllers\\OrderController.cs",
-              "ToolTip": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_API\\Controllers\\OrderController.cs",
-              "RelativeToolTip": "Shop_API\\Controllers\\OrderController.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAABBwC0AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\Repositories\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "Shop_DATA\\Repositories\\OrderRepository.cs",
+              "ToolTip": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\Repositories\\OrderRepository.cs",
+              "RelativeToolTip": "Shop_DATA\\Repositories\\OrderRepository.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAIA4wDIAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T09:52:06.333Z",
+              "WhenOpened": "2025-04-08T09:55:05.266Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 10,
+              "Title": "IOrderRepository.cs",
+              "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\IRepositories\\IOrderRepository.cs",
+              "RelativeDocumentMoniker": "Shop_DATA\\IRepositories\\IOrderRepository.cs",
+              "ToolTip": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\IRepositories\\IOrderRepository.cs",
+              "RelativeToolTip": "Shop_DATA\\IRepositories\\IOrderRepository.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAcwAoAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T09:54:41.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "ProviderVM.cs",
               "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_CORE\\VMs\\ProviderVM.cs",
               "RelativeDocumentMoniker": "Shop_CORE\\VMs\\ProviderVM.cs",
@@ -251,7 +308,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "IProviderRepository.cs",
               "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\IRepositories\\IProviderRepository.cs",
               "RelativeDocumentMoniker": "Shop_DATA\\IRepositories\\IProviderRepository.cs",
@@ -264,7 +321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "ProviderRepository.cs",
               "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\Repositories\\ProviderRepository.cs",
               "RelativeDocumentMoniker": "Shop_DATA\\Repositories\\ProviderRepository.cs",
@@ -277,7 +334,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "ProviderService.cs",
               "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_CORE\\Services\\ProviderService.cs",
               "RelativeDocumentMoniker": "Shop_CORE\\Services\\ProviderService.cs",
@@ -290,7 +347,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 16,
               "Title": "IProviderService.cs",
               "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_CORE\\IServices\\IProviderService.cs",
               "RelativeDocumentMoniker": "Shop_CORE\\IServices\\IProviderService.cs",
@@ -303,7 +360,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 24,
               "Title": "20250408114445_db3.cs",
               "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\Migrations\\20250408114445_db3.cs",
               "RelativeDocumentMoniker": "Shop_DATA\\Migrations\\20250408114445_db3.cs",
@@ -316,7 +373,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "Provider.cs",
               "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\Models\\Provider.cs",
               "RelativeDocumentMoniker": "Shop_DATA\\Models\\Provider.cs",
@@ -329,7 +386,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 25,
               "Title": "20250408104941_db2.cs",
               "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\Migrations\\20250408104941_db2.cs",
               "RelativeDocumentMoniker": "Shop_DATA\\Migrations\\20250408104941_db2.cs",
@@ -342,7 +399,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "Order.cs",
               "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\Models\\Order.cs",
               "RelativeDocumentMoniker": "Shop_DATA\\Models\\Order.cs",
@@ -355,7 +412,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 26,
               "Title": "20250408104403_db1.cs",
               "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\Migrations\\20250408104403_db1.cs",
               "RelativeDocumentMoniker": "Shop_DATA\\Migrations\\20250408104403_db1.cs",
@@ -368,7 +425,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "Product.cs",
               "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\Models\\Product.cs",
               "RelativeDocumentMoniker": "Shop_DATA\\Models\\Product.cs",
@@ -381,72 +438,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "ProductRepository.cs",
-              "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\Repositories\\ProductRepository.cs",
-              "RelativeDocumentMoniker": "Shop_DATA\\Repositories\\ProductRepository.cs",
-              "ToolTip": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\Repositories\\ProductRepository.cs",
-              "RelativeToolTip": "Shop_DATA\\Repositories\\ProductRepository.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAA0wBMAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T09:47:50.007Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_CORE\\Services\\ProductService.cs",
-              "RelativeDocumentMoniker": "Shop_CORE\\Services\\ProductService.cs",
-              "ToolTip": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_CORE\\Services\\ProductService.cs",
-              "RelativeToolTip": "Shop_CORE\\Services\\ProductService.cs",
-              "ViewState": "AgIAADkAAAAAAAAAAAAuwEgAAABQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T09:47:05.585Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_API\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "Shop_API\\Controllers\\ProductController.cs",
-              "ToolTip": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_API\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "Shop_API\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAuwDAAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T09:45:53.925Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "IProductRepository.cs",
-              "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\IRepositories\\IProductRepository.cs",
-              "RelativeDocumentMoniker": "Shop_DATA\\IRepositories\\IProductRepository.cs",
-              "ToolTip": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\IRepositories\\IProductRepository.cs",
-              "RelativeToolTip": "Shop_DATA\\IRepositories\\IProductRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T09:48:34.038Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 23,
-              "Title": "IProductService.cs",
-              "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_CORE\\IServices\\IProductService.cs",
-              "RelativeDocumentMoniker": "Shop_CORE\\IServices\\IProductService.cs",
-              "ToolTip": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_CORE\\IServices\\IProductService.cs",
-              "RelativeToolTip": "Shop_CORE\\IServices\\IProductService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T09:36:54.856Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
               "Title": "20250407195718_db.cs",
               "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_DATA\\Migrations\\20250407195718_db.cs",
               "RelativeDocumentMoniker": "Shop_DATA\\Migrations\\20250407195718_db.cs",
@@ -459,7 +451,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 22,
               "Title": "MappingProfiler.cs",
               "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_CORE\\MappingProfiler.cs",
               "RelativeDocumentMoniker": "Shop_CORE\\MappingProfiler.cs",
@@ -472,19 +464,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "Shop_API.csproj",
-              "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_API\\Shop_API.csproj",
-              "RelativeDocumentMoniker": "Shop_API\\Shop_API.csproj",
-              "ToolTip": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_API\\Shop_API.csproj",
-              "RelativeToolTip": "Shop_API\\Shop_API.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-07T19:32:17.605Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 21,
               "Title": "Shop_CORE.csproj",
               "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_CORE\\Shop_CORE.csproj",
               "RelativeDocumentMoniker": "Shop_CORE\\Shop_CORE.csproj",
@@ -493,19 +473,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-04-07T20:09:02.858Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "ProductVm.cs",
-              "DocumentMoniker": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_CORE\\VMs\\ProductVm.cs",
-              "RelativeDocumentMoniker": "Shop_CORE\\VMs\\ProductVm.cs",
-              "ToolTip": "D:\\Hadasim_Test\\Part_D\\Shop_API\\Shop_CORE\\VMs\\ProductVm.cs",
-              "RelativeToolTip": "Shop_CORE\\VMs\\ProductVm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T20:02:33.765Z",
-              "EditorCaption": ""
             }
           ]
         }
