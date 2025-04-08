@@ -33,6 +33,9 @@ def process_log_file(file_path, chunk_size, N):
         error_count.update(block_counter)
 
     # Find the most common errors
+    if N >= len(error_count):
+        return error_count.keys()
+    
     min_heap = [(value, key) for key, value in islice(error_count.items(), N)]
     heapify(min_heap)
 
@@ -51,3 +54,19 @@ top_n = 3 # The most common errors
 top_errors = process_log_file(file_path, chunk_size, top_n)
 print(f'top_errors: {top_errors}')
 
+"""
+היעילות של התוכנית:
+זמן:
+קריאת הקובץ = O(n) כאשר n זה מספר השורות
+מציאת N השגיאות הנפוצות זה: O(K log N)
+כאשר N זה מספר השגיאות להחזרה וK זה מספר השגיאות
+
+סה"כ: O(n) + O(K log N) 
+--------
+מקום:
+גודל המילון O(K) כאשר K הוא מספר השגיאות
+גודל הערמה: O(N) כאשר N מספר השגיאות הנדרש
+שמירת שורות בבלוק O(M) כאשר M זה מספר השורות לכל בלוק
+
+סה"כ: O(K + M) N <= K
+"""
