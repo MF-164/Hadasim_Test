@@ -25,8 +25,42 @@ namespace Shop_API.Controllers
                 return BadRequest("Order cannot be null.");
             }
 
-            await _orderService.CreateOrderAsync(orderVm);
-            return CreatedAtAction(nameof(GetOrderById), new { id = orderVm.Id }, orderVm);
+            var createdOrder = await _orderService.CreateOrderAsync(orderVm);
+            return CreatedAtAction(nameof(GetOrderById), new { id = createdOrder.Id }, createdOrder);
+        }
+
+
+        [HttpPut("UpdateStatusByOrderId/{orderId}")]
+        public async Task<ActionResult<OrderVm>> UpdateOrderStatus(int orderId, [FromBody] string newStatus)
+        {
+            try
+            {
+                var updatedOrder = await _orderService.UpdateOrderStatusAsync(orderId, newStatus);
+                return Ok(updatedOrder);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Error updating order status: {ex.Message}");
+            }
+        }
+
+
+        [HttpGet("GetOrdersByProviderId/{providerId}")]
+        public async Task<IActionResult> GetByProviderIdAsync(int providerId)
+        {
+            try
+            {
+                var orders = await _orderService.GetByProviderIdAsync(providerId);
+                return Ok(orders);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
 
         [HttpGet("GetAllOrders")]

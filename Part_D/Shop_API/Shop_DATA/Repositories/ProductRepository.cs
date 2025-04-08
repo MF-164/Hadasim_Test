@@ -17,12 +17,13 @@ namespace Shop_DATA.Repositories
             _context = context;
         }
 
-        public async Task CreateAsync(Product product)
+        public async Task<Product> CreateAsync(Product product)
         {
             try
             {
-                await _context.Products.AddAsync(product);
+                var productEntry = await _context.Products.AddAsync(product);
                 await _context.SaveChangesAsync();
+                return productEntry.Entity;
             }
             catch (Exception ex)
             {
@@ -47,6 +48,18 @@ namespace Shop_DATA.Repositories
             try
             {
                 return await _context.Products.Where(p => p.ProviderId == providerId).Include(p => p.Provider).ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error in GetByProviderAsync method of ProductRepository class in Shop_DATA project: {ex.Message}", ex);
+            }
+        }
+
+        public async Task<List<Product>> GetAllAsync()
+        {
+            try
+            {
+                return await _context.Products.ToListAsync();
             }
             catch (Exception ex)
             {

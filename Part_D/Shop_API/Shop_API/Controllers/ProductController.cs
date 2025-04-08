@@ -36,6 +36,13 @@ namespace Shop_API.Controllers
             return Ok(products);
         }
 
+        [HttpGet("GetAll")]
+        public async Task<IActionResult> GetAll()
+        {
+            var products = await _productService.GetAllAsync();
+            return Ok(products);
+        }
+
         [HttpPost("CreateProduct")]
         public async Task<IActionResult> CreateProduct([FromBody] ProductVm productVm)
         {
@@ -44,8 +51,8 @@ namespace Shop_API.Controllers
                 return BadRequest("Product cannot be null.");
             }
 
-            await _productService.CreateProductAsync(productVm);
-            return CreatedAtAction(nameof(GetProductById), new { id = productVm.Id }, productVm);
+            var createdProduct = await _productService.CreateProductAsync(productVm);
+            return CreatedAtAction(nameof(GetProductById), new { id = createdProduct.Id }, createdProduct);
         }
     }
 }

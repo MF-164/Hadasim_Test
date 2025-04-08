@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Shop_CORE.IServices;
 using Shop_CORE.VMs;
 using Shop_DATA.IRepositories;
@@ -22,13 +23,15 @@ namespace Shop_CORE.Services
             _mapper = mapper;
         }
 
-        public async Task CreateOrderAsync(OrderVm orderVm)
+        public async Task<OrderVm> CreateOrderAsync(OrderVm orderVm)
         {
             try
             {
                 var order = _mapper.Map<Order>(orderVm);
                 await ValidateOrder(order);
-                await _orderRepository.CreateAsync(order);
+                var createdOrder = await _orderRepository.CreateAsync(order);
+
+                return _mapper.Map<OrderVm>(createdOrder);
             }
             catch (Exception ex)
             {
@@ -49,6 +52,30 @@ namespace Shop_CORE.Services
             }
         }
 
+        public async Task<List<OrderVm>> GetByProviderIdAsync(int providerId)
+        {
+            try
+            {
+                if (providerId <= 0)
+                {
+                    throw new ArgumentException("Invalid provider ID");
+                }
+
+                var orders = await _orderRepository.GetByProviderIdAsync(providerId);
+                if (orders == null || !orders.Any())
+                {
+                    throw new KeyNotFoundException("No orders found for the specified provider.");
+                }
+
+                return _mapper.Map<List<OrderVm>>(orders);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error in GetByProviderIdAsync method, Class: OrderService. Original error: {ex.Message}", ex);
+            }
+        }
+
+
         public async Task<OrderVm> GetOrderByIdAsync(int id)
         {
             try
@@ -66,6 +93,26 @@ namespace Shop_CORE.Services
                 throw new Exception($"Error in GetOrderByIdAsync method, Class: OrderService. Original error: {ex.Message}", ex);
             }
         }
+
+        public async Task<OrderVm> UpdateOrderStatusAsync(int orderId, string newStatus)
+        {
+            try
+            {
+                if (orderId <= 0)
+                {
+                    throw new ArgumentException("Invalid order ID");
+                }
+
+                var updatedOrder = await _orderRepository.UpdateStatusAsync(orderId, newStatus);
+
+                return _mapper.Map<OrderVm>(updatedOrder);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error in UpdateOrderStatusAsync method, Class: OrderService. Original error: {ex.Message}", ex);
+            }
+        }
+
 
         private async Task ValidateOrder(Order order)
         {

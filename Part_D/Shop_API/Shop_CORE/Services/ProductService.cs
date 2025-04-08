@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Shop_CORE.IServices;
 using Shop_CORE.VMs;
 using Shop_DATA.IRepositories;
@@ -57,13 +58,27 @@ namespace Shop_CORE.Services
             }
         }
 
-        public async Task CreateProductAsync(ProductVm productVm)
+        public async Task<List<ProductVm>> GetAllAsync()
+        {
+            try
+            {
+                var products = await _productRepository.GetAllAsync();
+                return _mapper.Map<List<ProductVm>>(products);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error in GetProductsByProviderAsync method of ProductService class in Shop_CORE project: {ex.Message}", ex);
+            }
+        }
+        public async Task<ProductVm> CreateProductAsync(ProductVm productVm)
         {
             try
             {
                 var product = _mapper.Map<Product>(productVm);
                 await ValidateProduct(product);
-                await _productRepository.CreateAsync(product);
+                var createdProduct = await _productRepository.CreateAsync(product);
+
+                return _mapper.Map<ProductVm>(createdProduct);
             }
             catch (Exception ex)
             {

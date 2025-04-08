@@ -17,6 +17,7 @@ namespace Shop_API.Controllers
             _providerService = providerService;
         }
 
+
         [HttpPost("CreateProvider")]
         public async Task<IActionResult> CreateProvider([FromBody] ProviderVm providerVm)
         {
@@ -25,8 +26,8 @@ namespace Shop_API.Controllers
                 return BadRequest("Provider cannot be null.");
             }
 
-            await _providerService.CreateProviderAsync(providerVm);
-            return CreatedAtAction(nameof(GetProviderById), new { id = providerVm.Id }, providerVm);
+            var createdProvider = await _providerService.CreateProviderAsync(providerVm);
+            return CreatedAtAction(nameof(GetProviderById), new { id = createdProvider.Id }, createdProvider);
         }
 
         [HttpGet("GetProviderById/{id}")]
@@ -45,6 +46,23 @@ namespace Shop_API.Controllers
         {
             var providers = await _providerService.GetAllProvidersAsync();
             return Ok(providers);
+        }
+
+        [HttpPost("Login")]
+        public async Task<IActionResult> LoginProvider([FromBody] ProviderVm providerVm)
+        {
+            if (providerVm == null)
+            {
+                return BadRequest("Login data cannot be null.");
+            }
+
+            var provider = await _providerService.LoginAsync(providerVm);
+            if (provider == null)
+            {
+                return Unauthorized("Invalid username or password.");
+            }
+
+            return Ok(provider);
         }
     }
 }

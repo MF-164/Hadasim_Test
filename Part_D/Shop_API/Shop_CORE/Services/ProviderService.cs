@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Shop_CORE.IServices;
 using Shop_CORE.VMs;
 using Shop_DATA.IRepositories;
@@ -20,7 +21,7 @@ namespace Shop_CORE.Services
             _mapper = mapper;
         }
 
-        public async Task CreateProviderAsync(ProviderVm providerVm)
+        public async Task<ProviderVm> CreateProviderAsync(ProviderVm providerVm)
         {
             try
             {
@@ -30,7 +31,9 @@ namespace Shop_CORE.Services
                 }
                 var provider = _mapper.Map<Provider>(providerVm);
                 await ValidateProvider(provider);
-                await _providerRepository.CreateAsync(provider);
+                var createdProvider = await _providerRepository.CreateAsync(provider);
+
+                return _mapper.Map<ProviderVm>(createdProvider);
             }
             catch (Exception ex)
             {
@@ -74,11 +77,44 @@ namespace Shop_CORE.Services
             }
         }
 
+        public async Task<ProviderVm> LoginAsync(ProviderVm providerVm)
+        {
+            try
+            {
+                if (providerVm == null)
+                {
+                    throw new ArgumentNullException(nameof(providerVm), "Provider cannot be null.");
+                }
+
+                var provider = await _providerRepository.GetByUsernameAsync(providerVm.Username);
+                if (provider == null || !VerifyPassword(providerVm.Password, provider.Password))
+                {
+                    throw new Exception("Invalid username or password.");
+                }
+
+                return _mapper.Map<ProviderVm>(provider);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error in LoginAsync method of ProviderService class: {ex.Message}", ex);
+            }
+        }
+
+        private bool VerifyPassword(string enteredPassword, string storedPassword)
+        {
+            return enteredPassword == storedPassword;
+        }
+
         private async Task ValidateProvider(Provider provider)
         {
             if (provider == null)
             {
                 throw new ArgumentNullException(nameof(provider), "Provider cannot be null.");
+            }
+
+            if (await _providerRepository.IsUsernameTakenAsync(provider.Username))
+            {
+                throw new Exception($"Username '{provider.Username}' is already taken.");
             }
 
             if (string.IsNullOrWhiteSpace(provider.CompanyName))
@@ -96,5 +132,6 @@ namespace Shop_CORE.Services
                 throw new ArgumentException("Representative name cannot be null or empty.");
             }
         }
+
     }
 }

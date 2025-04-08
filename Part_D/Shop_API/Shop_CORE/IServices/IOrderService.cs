@@ -10,8 +10,10 @@ namespace Shop_CORE.IServices
 {
     public interface IOrderService
     {
-        Task CreateOrderAsync(OrderVm order);
+        Task<OrderVm> CreateOrderAsync(OrderVm orderVm);
+        Task<List<OrderVm>> GetByProviderIdAsync(int providerId);
         Task<List<OrderVm>> GetAllOrdersAsync();
         Task<OrderVm> GetOrderByIdAsync(int id);
+        Task<OrderVm> UpdateOrderStatusAsync(int orderId, string newStatus);
     }
 }

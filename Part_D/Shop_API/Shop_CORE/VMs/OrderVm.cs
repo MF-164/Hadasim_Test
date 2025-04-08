@@ -12,9 +12,10 @@ namespace Shop_CORE.VMs
         public DateTime OrderDate { get; set; }
         public decimal Quantity { get; set; }
         public int ProductId { get; set; }
-        public string ProductName { get; set; }
+        public string Status { get; set; }
+        public string? ProductName { get; set; }
         public int ProviderId { get; set; }
-        public string ProviderName { get; set; }
+        public string? ProviderName { get; set; }
 
     }
 }

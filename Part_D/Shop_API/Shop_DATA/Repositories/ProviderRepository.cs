@@ -17,18 +17,44 @@ namespace Shop_DATA.Repositories
             _context = context;
         }
 
-        public async Task CreateAsync(Provider provider)
+        public async Task<Provider> CreateAsync(Provider provider)
         {
             try
             {
-                await _context.Providers.AddAsync(provider);
+                var providerEntity = await _context.Providers.AddAsync(provider);
                 await _context.SaveChangesAsync();
+                return providerEntity.Entity;
             }
             catch (Exception ex)
             {
                 throw new Exception($"Error in CreateAsync method of ProviderRepository class in Shop_DATA project: {ex.Message}", ex);
             }
         }
+
+        public async Task<bool> IsUsernameTakenAsync(string username)
+        {
+            try
+            {
+                return await _context.Providers.AnyAsync(p => p.Username == username);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error in IsUsernameTakenAsync method of ProviderRepository class in Shop_DATA project: {ex.Message}", ex);
+            }
+        }
+
+        public async Task<Provider> GetByUsernameAsync(string username)
+        {
+            try
+            {
+                return await _context.Providers.FirstOrDefaultAsync(p => p.Username == username);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error in GetByUsernameAsync method of ProviderRepository class in Shop_DATA project: {ex.Message}", ex);
+            }
+        }
+
 
         public async Task<List<Provider>> GetAllAsync()
         {

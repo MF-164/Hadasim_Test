@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-import './Login.scss'
-import { useForm } from 'react-hook-form'
+import { Link } from 'react-router-dom';
+import './Login.scss';
+import { useForm } from 'react-hook-form';
 import TextField from '@mui/material/TextField';
 import PersonIcon from '@mui/icons-material/Person';
 import IconButton from '@mui/material/IconButton';
@@ -13,13 +13,12 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
-import { useNavigate } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import Alert from '@mui/material/Alert';
 
-import { loginToWebSite } from '../../store/features/Product/productSlice'
-import { store } from '../../store/app/store'
-
+import { loginProviderForServer } from '../../store/features/Provider/providerSlice';
+import { store } from '../../store/app/store';
 
 const BootstrapButton = styled(Button)({
     boxShadow: 'none',
@@ -53,15 +52,14 @@ const BootstrapButton = styled(Button)({
         borderColor: '#005cbf',
     },
     width: '60%'
-})
+});
 
-const Login = () => {
-
-    let dis = useDispatch()
-    let navigate = useNavigate()
-    const { register, handleSubmit, getValues, formState: { errors, dirtyFields, isDirty, isValid } } = useForm({
+const ProvidersLogin = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const { register, handleSubmit, formState: { errors } } = useForm({
         mode: 'onBlur'
-    })
+    });
 
     const [showPassword, setShowPassword] = React.useState(false);
     const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -70,39 +68,45 @@ const Login = () => {
     };
 
     const handleClickLogin = (user) => {
-        user.role = ''
-        dis(loginToWebSite(user)).then(() => {
-            let currentClient = store.getState().client.currentClient.client
-            console.log({currentClient});
-            if (currentClient != null) {
-                navigate('/home')
-            } else
-                navigate('SignUp')
-        }
-        )
+        dispatch(loginProviderForServer(user)).then(() => {
+            let currentProvider = store.getState().provider.currentProvider;            
+            if (currentProvider != null || currentProvider != undefined) {                
+                if(currentProvider.username === 'Admin' && currentProvider.password === 'Admin123')
+                    navigate('/providers');
+                else
+                    navigate('/orders/all')
+            } else {
+                navigate('/SignUp');
+            }
+        });
+    };
 
-    }
     return (
-        <div className='Login'>
-            <form className='Loginform' onSubmit={handleSubmit(handleClickLogin)}>
+        <div className='ProvidersLogin'>
+            <form className='ProvidersLoginform' onSubmit={handleSubmit(handleClickLogin)}>
                 <div className='header'>
-                    <u><h2>Login</h2></u>
-                    <span>Sing in to continue.</span>
+                    <u><h2>Providers Login</h2></u>
+                    <span>Please sign in to continue.</span>
                 </div>
-                <TextField id="username" label={`UserName ${errors.username?.type == "required" ? '*' : ''}`} variant="standard"
-                    {...register("username", { pattern: /^[ A-Za-z]+$/i, required:true, maxLength: 15 })}
+                <TextField 
+                    id="username" 
+                    label={`Username ${errors.username?.type === "required" ? '*' : ''}`} 
+                    variant="standard"
+                    {...register("username", { pattern: /^[A-Za-z]+$/i, required: true, maxLength: 15 })}
                     InputProps={{
                         endAdornment: (
                             <PersonIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
                         ),
                     }}
                 />
-                {errors.username?.type === 'pattern' && <Alert severity="warning">please enter only english letters.</Alert>}
-                {errors.username?.type === 'maxLength' && <Alert severity="warning">please enter a valid user name that is at least 25 letters.</Alert>}
+                {errors.username?.type === 'pattern' && <Alert severity="warning">Please enter only English letters.</Alert>}
+                {errors.username?.type === 'maxLength' && <Alert severity="warning">Please enter a valid username that is at most 15 characters.</Alert>}
 
                 <FormControl sx={{ m: 1, width: '25ch' }} variant="standard">
-                    <InputLabel htmlFor="standard-adornment-password">Password {errors.password?.type == "required" ? '*' : ''}</InputLabel>
-                    <Input id="password" type={showPassword ? 'text' : 'password'}
+                    <InputLabel htmlFor="standard-adornment-password">Password {errors.password?.type === "required" ? '*' : ''}</InputLabel>
+                    <Input 
+                        id="password" 
+                        type={showPassword ? 'text' : 'password'}
                         {...register("password", { minLength: 4, maxLength: 8, required: true })}
                         endAdornment={
                             <InputAdornment position="end">
@@ -116,22 +120,20 @@ const Login = () => {
                             </InputAdornment>
                         }
                     />
-                    {errors.password?.type === 'minLength' && <Alert severity="error">Please enter a valid password that is at more 3 characters.</Alert>}
-                    {errors.password?.type === 'maxLength' && <Alert severity="warning">please enter a valid user name that is at least 9 characters.</Alert>}
-
+                    {errors.password?.type === 'minLength' && <Alert severity="error">Please enter a valid password that is at least 4 characters.</Alert>}
+                    {errors.password?.type === 'maxLength' && <Alert severity="warning">Please enter a valid password that is at most 8 characters.</Alert>}
                 </FormControl>
 
                 <div className='btnSubmit'>
-                    <BootstrapButton variant="contained" type='Submit'>Log in</BootstrapButton>
+                    <BootstrapButton variant="contained" type='submit'>Log In</BootstrapButton>
                     <div>
                         <span>Don't have an account? &nbsp;</span>
                         <Link to='/SignUp'>Sign Up</Link>
                     </div>
                 </div>
-
             </form>
         </div>
-    )
-}
+    );
+};
 
-export default Login
+export default ProvidersLogin;

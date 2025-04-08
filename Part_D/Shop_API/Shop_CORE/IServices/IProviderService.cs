@@ -10,8 +10,9 @@ namespace Shop_CORE.IServices
 {
     public interface IProviderService
     {
-        Task CreateProviderAsync(ProviderVm provider);
+        Task<ProviderVm> CreateProviderAsync(ProviderVm providerVm);
         Task<ProviderVm> GetProviderByIdAsync(int id);
         Task<List<ProviderVm>> GetAllProvidersAsync();
+        Task<ProviderVm> LoginAsync(ProviderVm providerVm);
     }
 }

@@ -1,14 +1,8 @@
 import { useState } from 'react';
-import './SignUp.scss'
-
-
+import './SignUp.scss';
 import TextField from '@mui/material/TextField';
 import PersonIcon from '@mui/icons-material/Person';
-import LocationCityOutlinedIcon from '@mui/icons-material/LocationCityOutlined';
-import HomeWorkOutlinedIcon from '@mui/icons-material/HomeWorkOutlined';
-import HouseOutlinedIcon from '@mui/icons-material/HouseOutlined';
 import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
-import IconButton from '@mui/material/IconButton';
 import Input from '@mui/material/Input';
 import InputLabel from '@mui/material/InputLabel';
 import InputAdornment from '@mui/material/InputAdornment';
@@ -16,14 +10,14 @@ import FormControl from '@mui/material/FormControl';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Button from '@mui/material/Button';
-import Person4Icon from '@mui/icons-material/Person4';
 import { styled } from '@mui/material/styles';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form';
 import Alert from '@mui/material/Alert';
-
-import { signupToWebSite } from '../../store/features/Client/clientSlice';
+import { insertProviderForServer } from '../../store/features/Provider/providerSlice';
+import IconButton from '@mui/material/IconButton';
+import { store } from '../../store/app/store';
 
 const BootstrapButton = styled(Button)({
     boxShadow: 'none',
@@ -59,69 +53,105 @@ const BootstrapButton = styled(Button)({
     width: '60%'
 })
 
-
 const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false);
-    // const [value, setValue] = useState()
-    const handleClickShowPassword = () => setShowPassword((show) => !show);
+    const dispatch = useDispatch();
+    let navigate = useNavigate();
 
-    const dis = useDispatch();
-    let navigate = useNavigate()
-    
-    const { register, handleSubmit, getValues, formState: { errors, dirtyFields, isDirty, isValid } } = useForm({
+    const { register, handleSubmit, formState: { errors, isValid } } = useForm({
         mode: 'onBlur'
-    })
+    });
 
+    const handleClickShowPassword = () => setShowPassword((show) => !show);
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
     };
 
-    const handleSave = (newClient) => {
-        newClient.id = 0
-        newClient.role = ""
-        console.log({ newClient });
-        dis(signupToWebSite(newClient)).then(() => navigate('/home'))
-    }
+    const handleSave = (newProvider) => {
+        newProvider.id = 0;
+        dispatch(insertProviderForServer(newProvider)).then(() => {
+            const currentProvider = store.getState().provider.currentProvider;
+            if (currentProvider && currentProvider.id) {
+                navigate('/products');
+            } else {
+                console.error("Failed to retrieve current provider.");
+            }
+        }).catch((error) => {
+            console.error("Error creating provider:", error);
+        });
+    };    
 
     return (
         <div className='SignUp'>
             <form className='SignUpform' onSubmit={handleSubmit(handleSave)}>
                 <div className='header'>
-                    <u><h2>SignUp</h2></u>
-                    <span>Sing in to continue.</span>
+                    <u><h2>Sign Up as Provider</h2></u>
+                    <span>Sign in to continue.</span>
                 </div>
-                <TextField id="username" label={`UserName ${errors.username?.type == "required" ? '*' : ''}`} variant="standard"
-                    {...register("username", { pattern: /^[ A-Za-z]+$/i, required:true, maxLength: 15 })}
+
+                <TextField
+                    id="companyName"
+                    label={`Company Name ${errors.companyName?.type === "required" ? '*' : ''}`}
+                    variant="standard"
+                    {...register("companyName", { required: true })}
                     InputProps={{
                         endAdornment: (
                             <PersonIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
                         ),
                     }}
                 />
-                {errors.username?.type === 'pattern' && <Alert severity="warning">please enter only english letters.</Alert>}
-                {errors.username?.type === 'maxLength' && <Alert severity="warning">please enter a valid user name that is at least 25 letters.</Alert>}
+                {errors.companyName?.type === 'required' && <Alert severity="warning">Company name is required.</Alert>}
                 <br />
 
                 <TextField
-                    id="name"
-                    label="Name"
+                    id="username"
+                    label={`Username ${errors.username?.type === "required" ? '*' : ''}`}
                     variant="standard"
-                    {...register("name", { pattern: /^[ A-Za-z]+$/i, maxLength: 25 })}
+                    {...register("username", { required: true })}
                     InputProps={{
                         endAdornment: (
-                            <Person4Icon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+                            <PersonIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
                         ),
                     }}
                 />
-                {errors.name?.type === 'pattern' && <Alert severity="warning">please enter only english letters.</Alert>}
-                {errors.name?.type === 'maxLength' && <Alert severity="warning">please enter a valid user name that is at least 25 letters.</Alert>}
+                {errors.username?.type === 'required' && <Alert severity="warning">Username is required.</Alert>}
+                <br />
 
+                <TextField
+                    id="phone"
+                    label={`Phone ${errors.phone?.type === "required" ? '*' : ''}`}
+                    variant="standard"
+                    {...register("phone", { required: true, pattern: /^[0-9]+$/, minLength: 10, maxLength: 10 })}
+                    InputProps={{
+                        endAdornment: (
+                            <LocalPhoneOutlinedIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+                        ),
+                    }}
+                />
+                {errors.phone?.type === 'required' && <Alert severity="warning">Phone number is required.</Alert>}
+                {errors.phone?.type === 'pattern' && <Alert severity="error">Please enter only numbers.</Alert>}
+                <br />
+
+                <TextField
+                    id="representativeName"
+                    label={`Representative Name ${errors.representativeName?.type === "required" ? '*' : ''}`}
+                    variant="standard"
+                    {...register("representativeName", { required: true })}
+                    InputProps={{
+                        endAdornment: (
+                            <PersonIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+                        ),
+                    }}
+                />
+                {errors.representativeName?.type === 'required' && <Alert severity="warning">Representative name is required.</Alert>}
                 <br />
 
                 <FormControl sx={{ m: 1, width: '25ch' }} variant="standard">
-                    <InputLabel htmlFor="standard-adornment-password">Password {errors.password?.type == "required" ? '*' : ''}</InputLabel>
-                    <Input id="password" type={showPassword ? 'text' : 'password'}
-                        {...register("password", { minLength: 4, maxLength: 8, required: true })}
+                    <InputLabel htmlFor="standard-adornment-password">Password {errors.password?.type === "required" ? '*' : ''}</InputLabel>
+                    <Input
+                        id="password"
+                        type={showPassword ? 'text' : 'password'}
+                        {...register("password", { required: true, minLength: 4, maxLength: 8 })}
                         endAdornment={
                             <InputAdornment position="end">
                                 <IconButton
@@ -134,78 +164,17 @@ const SignUp = () => {
                             </InputAdornment>
                         }
                     />
-                    {errors.password?.type === 'minLength' && <Alert severity="error">Please enter a valid password that is at more 3 characters.</Alert>}
-                    {errors.password?.type === 'maxLength' && <Alert severity="warning">please enter a valid user name that is at least 9 characters.</Alert>}
-
+                    {errors.password?.type === 'required' && <Alert severity="error">Password is required.</Alert>}
+                    {errors.password?.type === 'minLength' && <Alert severity="error">Password must be at least 4 characters.</Alert>}
+                    {errors.password?.type === 'maxLength' && <Alert severity="warning">Password must be at most 8 characters.</Alert>}
                 </FormControl>
 
-                <br />
-                <TextField
-                    id="phone"
-                    label="Phone"
-                    variant="standard"
-                    {...register("phone", { pattern: /^[0-9]+$/i, minLength: 10, maxLength: 10 })}
-                    InputProps={{
-                        endAdornment: (
-                            <LocalPhoneOutlinedIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-                        ),
-                    }}
-                />
-                {errors.phone?.type === 'pattern' && <Alert severity="error">Please enter only numbers.</Alert>}
-                {errors.phone?.type === 'minLength' && <Alert severity="error">Please enter a valid password that is at more 3 numbers.</Alert>}
-                {errors.phone?.type === 'maxLength' && <Alert severity="warning">Please enter a valid user name that is at least 9 numbers.</Alert>}
-                <br />
-
-                <TextField
-                    id="city"
-                    label="City"
-                    variant="standard"
-                    {...register("city", { pattern: /^[ A-Za-z]+$/i, maxLength: 15 })}
-                    InputProps={{
-                        endAdornment: (
-                            <LocationCityOutlinedIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-                        ),
-                    }}
-                />
-                {errors.city?.type === 'pattern' && <Alert severity="warning">please enter only english letters.</Alert>}
-                {errors.city?.type === 'maxLength' && <Alert severity="warning">Please enter a valid user name that is at least 15 numbers.</Alert>}
-                <br />
-
-                <TextField
-                    id="address"
-                    label="Address"
-                    variant="standard"
-                    {...register("address", { pattern: /^[ A-Za-z]+$/i, maxLength: 15 })}
-                    InputProps={{
-                        endAdornment: (
-                            <HomeWorkOutlinedIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-                        ),
-                    }}
-                />
-                {errors.address?.type === 'pattern' && <Alert severity="warning">please enter only english letters.</Alert>}
-                {errors.address?.type === 'maxLength' && <Alert severity="warning">Please enter a valid user name that is at least 15 numbers.</Alert>}
-                <br />
-                <TextField
-                    id="housenumber"
-                    label="HouseNumber"
-                    variant="standard"
-                    {...register("housenumber", { pattern: /^[0-9]+$/i, minLength: 1, maxLength: 3 })}
-                    InputProps={{
-                        endAdornment: (
-                            <HouseOutlinedIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
-                        ),
-                    }}
-                />
-                {errors.housenumber?.type === 'pattern' && <Alert severity="error">Please enter only numbers.</Alert>}
-                {errors.housenumber?.type === 'minLength' && <Alert severity="warning">Please enter a valid password that is at more 0 numbers.</Alert>}
-                {errors.housenumber?.type === 'maxLength' && <Alert severity="warning">Please enter a valid user name that is at least 3 numbers.</Alert>}
-                <br />
                 <div className='btnSubmit'>
-                    <BootstrapButton variant="contained" disabled={!isValid} type='Submit'>Log in</BootstrapButton>
+                    <BootstrapButton variant="contained" disabled={!isValid} type='Submit'>Sign Up</BootstrapButton>
                 </div>
             </form>
         </div>
-    )
+    );
 }
 
-export default SignUp
+export default SignUp;

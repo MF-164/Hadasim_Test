@@ -9,9 +9,10 @@ namespace Shop_CORE.VMs
     public class ProviderVm
     {
         public int Id { get; set; }
-        public string CompanyName { get; set; }
-        public string Phone { get; set; }
-        public string RepresentativeName { get; set; }
+        public string Username { get; set; }
+        public string? CompanyName { get; set; }
+        public string? Phone { get; set; }
+        public string? RepresentativeName { get; set; }
         public string Password { get; set; }
 
     }
